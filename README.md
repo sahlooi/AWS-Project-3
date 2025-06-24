@@ -2,15 +2,11 @@
 
 This project demonstrates how I built a complete AWS cloud pipeline for organizing, processing, and analyzing budget data. The goal was to clean, prepare, store, and query historical budget records, and enable real-time insights with billing alerts.
 
----
-
-## 🔍 Project Objective
+## Project Objective
 
 To help an organization streamline their budget analysis and monitoring efforts using AWS Glue, DataBrew, Athena, S3, and CloudWatch. The project uses a cloud-native architecture to handle raw datasets, transform them, and store them in a query-ready format.
 
----
-
-## 🧠 Key Steps and Activities
+## Key Steps and Activities
 
 ### 1. Data Lake Setup with Amazon S3
 
@@ -18,10 +14,7 @@ To help an organization streamline their budget analysis and monitoring efforts 
 - Created multiple S3 buckets for raw, cleaned, and curated data
 - Used structured folders and descriptive naming
 
-> 🖼️ *S3 Bucket for Final Output:*  
-`![S3 Storage - Curated Data](s3.jpg)`
-
----
+![S3 Storage - Curated Data](s3.jpg)
 
 ### 2. AWS Glue Data Catalog Configuration
 
@@ -29,10 +22,7 @@ To help an organization streamline their budget analysis and monitoring efforts 
 - Registered tables with accurate metadata
 - Ensured schema recognition for further transformation
 
-> 🖼️ *Glue Data Catalog with Tables:*  
-`![Glue Database Configuration](database.jpg)`
-
----
+![Glue Database Configuration](database.jpg)
 
 ### 3. Visual ETL Using AWS Glue DataBrew
 
@@ -40,10 +30,7 @@ To help an organization streamline their budget analysis and monitoring efforts 
 - Merged multiple sources like department, revenue, and budget files
 - Set up transformations like removing nulls, converting types, etc.
 
-> 🖼️ *ETL DataBrew Visual Flow:*  
-`![DataBrew Transformation Design](etl-design.jpg)`
-
----
+![DataBrew Transformation Design](etl-design.jpg)
 
 ### 4. Querying with Amazon Athena
 
@@ -51,10 +38,7 @@ To help an organization streamline their budget analysis and monitoring efforts 
 - Previewed schema and validated transformation accuracy
 - Used SQL to extract cost patterns and department analysis
 
-> 🖼️ *Joined Dataset in Athena:*  
-`![Athena Output Preview](joined.jpg)`
-
----
+![Athena Output Preview](joined.jpg)
 
 ### 5. Budget Cost Monitoring and Alerts
 
@@ -62,40 +46,30 @@ To help an organization streamline their budget analysis and monitoring efforts 
 - Created alarm conditions for estimated charges exceeding threshold
 - Used alarm metrics to notify users
 
-> 🖼️ *CloudWatch Billing Alert:*  
-`![AWS Billing Alert with CloudWatch](alarm.jpg)`
+![AWS Billing Alert with CloudWatch](alarm.jpg)
 
----
-
-## 💸 Cost Estimate
+## Cost Estimate
 
 Estimated cost was generated using the AWS Pricing Calculator. Based on Glue sessions and usage pattern, the projected monthly cost was minimal.
 
-> 🖼️ *AWS Glue Cost Estimate Summary:*  
-`![AWS Pricing Calculator](billing.jpg)`
+![AWS Pricing Calculator](billing.jpg)
 
----
-
-## 📊 Final Architecture Diagram
+## Final Architecture Diagram
 
 An architecture diagram showing the complete flow—from ingestion to storage, transformation, and query.
 
-> 🖼️ *ETL Pipeline and Resource Flow:*  
-`![Architecture Diagram - Budget Forecast Pipeline](etl-design.jpg)`
+![Architecture Diagram - Budget Forecast Pipeline](etl-design.jpg)
 
----
+## Tools Used
 
-## ✅ Tools Used
+- Amazon S3 – Storage buckets for raw and curated data
+- AWS Glue – Data catalog and schema registry
+- AWS Glue DataBrew – Visual ETL tool for transformation
+- Amazon Athena – SQL queries on transformed data
+- Amazon CloudWatch – Billing alerts and monitoring
 
-- **Amazon S3** – Storage buckets for raw and curated data
-- **AWS Glue** – Data catalog and schema registry
-- **AWS Glue DataBrew** – Visual ETL tool for transformation
-- **Amazon Athena** – SQL queries on transformed data
-- **Amazon CloudWatch** – Billing alerts and monitoring
-
----
-
-## 🧾 Summary
+## Summary
 
 With this AWS setup, the finance team can now analyze departmental spending, track budget accuracy, and receive alerts on cost overruns. The modular ETL process makes updates simple and ensures future datasets can be integrated easily.
+
 
