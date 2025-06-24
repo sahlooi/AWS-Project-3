@@ -1,72 +1,101 @@
-# AWS Project 3 – Data Processing and Analysis using AWS Glue & Athena
+# AWS Project 3 – Building a Scalable Budget Forecasting and Cost Monitoring System
 
-This project focuses on creating an efficient ETL (Extract, Transform, Load) pipeline using **AWS Glue** and analyzing the results using **AWS Athena**. The work includes cost analysis, designing the ETL workflow, implementing the data pipeline, and running SQL-like queries to understand the data better.
+This project demonstrates how I built a complete AWS cloud pipeline for organizing, processing, and analyzing budget data. The goal was to clean, prepare, store, and query historical budget records, and enable real-time insights with billing alerts.
 
-## Project Overview
+---
 
-The goal of this project was to:
+## 🔍 Project Objective
 
-- Explore data profiling and cleaning
-- Design and implement a working ETL pipeline using AWS Glue
-- Perform serverless querying using Athena
-- Track service usage and monitor billing to maintain cost-efficiency
+To help an organization streamline their budget analysis and monitoring efforts using AWS Glue, DataBrew, Athena, S3, and CloudWatch. The project uses a cloud-native architecture to handle raw datasets, transform them, and store them in a query-ready format.
 
-## Work Summary
+---
 
-### 1. Cost Evaluation using Billing Dashboard
+## 🧠 Key Steps and Activities
 
-- Checked the **AWS Billing Dashboard** to review the costs of services used.
-- Helped track resource consumption and manage the project budget.
+### 1. Data Lake Setup with Amazon S3
 
-<!-- ![Billing Dashboard](billing.jpg) -->
+- Uploaded historical financial data into Amazon S3
+- Created multiple S3 buckets for raw, cleaned, and curated data
+- Used structured folders and descriptive naming
 
-### 2. ETL Design and Planning
+> 🖼️ *S3 Bucket for Final Output:*  
+`![S3 Storage - Curated Data](s3.jpg)`
 
-- Mapped out the entire data pipeline:
-  - **Source**: Identified where the raw data was coming from
-  - **Transform**: Planned how the data would be cleaned and processed
-  - **Load**: Chose where the processed data would be stored
+---
 
-<!-- ![ETL Design](etl-design.jpg) -->
+### 2. AWS Glue Data Catalog Configuration
 
-### 3. ETL Implementation using AWS Glue
+- Created a Data Catalog using AWS Glue
+- Registered tables with accurate metadata
+- Ensured schema recognition for further transformation
 
-- Set up **AWS Glue jobs** to run the ETL pipeline.
-- Created scripts to clean and transform the data.
-- Verified data integrity after processing.
+> 🖼️ *Glue Data Catalog with Tables:*  
+`![Glue Database Configuration](database.jpg)`
 
-<!-- ![Glue Job Implementation](glue-etl.jpg) -->
+---
 
-### 4. Data Storage and Output Review
+### 3. Visual ETL Using AWS Glue DataBrew
 
-- Uploaded cleaned datasets into **Amazon S3** with organized folder structures:
-  - By department
-  - By historical data
-  - By revenue segments
+- Used DataBrew to visually clean and transform datasets
+- Merged multiple sources like department, revenue, and budget files
+- Set up transformations like removing nulls, converting types, etc.
 
-<!-- ![S3 Department Data](s3-dept.jpg) -->
-<!-- ![S3 Historical Data](s3-hist.jpg) -->
-<!-- ![S3 Revenue Data](s3-revenue.jpg) -->
+> 🖼️ *ETL DataBrew Visual Flow:*  
+`![DataBrew Transformation Design](etl-design.jpg)`
 
-### 5. Data Validation and Final Output
+---
 
-- Cross-checked final outputs with **initial ground truth**:
-  - Used cleaned views from DataBrew and Athena results
-- Ensured accuracy of transformations and matches across sources
+### 4. Querying with Amazon Athena
 
-<!-- ![GDB Historical Output](gdb-hist.jpg) -->
-<!-- ![GDB Revenue Output](gdb-revenue.jpg) -->
-<!-- ![GDB Department Output](gdb-dpt.jpg) -->
+- Queried joined datasets using Athena for insights
+- Previewed schema and validated transformation accuracy
+- Used SQL to extract cost patterns and department analysis
 
-## Tools and Technologies
+> 🖼️ *Joined Dataset in Athena:*  
+`![Athena Output Preview](joined.jpg)`
 
-- AWS Glue – for ETL processing
-- AWS Athena – for querying structured data
-- Amazon S3 – for storing processed datasets
-- AWS Billing Dashboard – for monitoring service usage
+---
 
-## Summary
+### 5. Budget Cost Monitoring and Alerts
 
-This project gave me real-world practice in building and managing ETL processes using **AWS Glue** and **Athena**. I learned how to automate data pipelines, run queries without managing servers, and monitor costs for cloud-based data engineering tasks.
+- Set up billing alerts using CloudWatch
+- Created alarm conditions for estimated charges exceeding threshold
+- Used alarm metrics to notify users
 
-Next steps could include automating the ETL trigger using AWS EventBridge or Step Functions, and connecting data outputs to BI tools like QuickSight or Tableau for visualization.
+> 🖼️ *CloudWatch Billing Alert:*  
+`![AWS Billing Alert with CloudWatch](alarm.jpg)`
+
+---
+
+## 💸 Cost Estimate
+
+Estimated cost was generated using the AWS Pricing Calculator. Based on Glue sessions and usage pattern, the projected monthly cost was minimal.
+
+> 🖼️ *AWS Glue Cost Estimate Summary:*  
+`![AWS Pricing Calculator](billing.jpg)`
+
+---
+
+## 📊 Final Architecture Diagram
+
+An architecture diagram showing the complete flow—from ingestion to storage, transformation, and query.
+
+> 🖼️ *ETL Pipeline and Resource Flow:*  
+`![Architecture Diagram - Budget Forecast Pipeline](etl-design.jpg)`
+
+---
+
+## ✅ Tools Used
+
+- **Amazon S3** – Storage buckets for raw and curated data
+- **AWS Glue** – Data catalog and schema registry
+- **AWS Glue DataBrew** – Visual ETL tool for transformation
+- **Amazon Athena** – SQL queries on transformed data
+- **Amazon CloudWatch** – Billing alerts and monitoring
+
+---
+
+## 🧾 Summary
+
+With this AWS setup, the finance team can now analyze departmental spending, track budget accuracy, and receive alerts on cost overruns. The modular ETL process makes updates simple and ensures future datasets can be integrated easily.
+
